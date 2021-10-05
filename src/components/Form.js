@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./Form.css";
 
 import FormSignup from "./FormSignup";
@@ -7,9 +7,9 @@ import Success from "./Success";
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const submitForm = () => {
+  const submitForm = useCallback(() => {
     setIsSubmitted(true);
-  };
+  }, [setIsSubmitted]);
   return (
     <div className="background">
       <div className="form__container">
